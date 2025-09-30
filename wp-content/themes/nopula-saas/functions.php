@@ -391,10 +391,22 @@ add_action('wp_enqueue_scripts', 'nopula_saas_scripts');
 function nopula_saas_fallback_menu() {
     echo '<ul class="nav-menu">';
     echo '<li><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
-    echo '<li><a href="#services">Services</a></li>';
-    echo '<li><a href="#testimonials">Testimonials</a></li>';
+    echo '<li class="dropdown">';
+    echo '<a href="' . esc_url(home_url('/services')) . '" class="dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>';
+    echo '<ul class="dropdown-menu">';
+    echo '<li><a href="' . esc_url(home_url('/services')) . '">All Services</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/web-development')) . '">Web Development</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/enterprise-software')) . '">Enterprise Software</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/ecommerce-solutions')) . '">E-commerce Solutions</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/ai-machine-learning')) . '">AI & Machine Learning</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/cloud-applications')) . '">Cloud Applications</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/mobile-development')) . '">Mobile Development</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/system-integration')) . '">System Integration</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/data-analytics')) . '">Data Analytics</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/it-solutions')) . '">IT Solutions</a></li>';
+    echo '</ul>';
+    echo '</li>';
     echo '<li><a href="' . esc_url(home_url('/blog')) . '">Blog</a></li>';
-    echo '<li><a href="#contact">Contact</a></li>';
     echo '</ul>';
 }
 

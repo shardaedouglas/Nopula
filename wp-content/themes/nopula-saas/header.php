@@ -27,25 +27,14 @@
             </a>
             
             <nav class="main-navigation">
-                <ul class="nav-menu">
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
-                    <li class="dropdown">
-                        <a href="<?php echo esc_url(home_url('/services')); ?>" class="dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo esc_url(home_url('/services')); ?>">All Services</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/web-development')); ?>">Web Development</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/enterprise-software')); ?>">Enterprise Software</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/ecommerce-solutions')); ?>">E-commerce Solutions</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/ai-machine-learning')); ?>">AI & Machine Learning</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/cloud-applications')); ?>">Cloud Applications</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/mobile-development')); ?>">Mobile Development</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/system-integration')); ?>">System Integration</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/data-analytics')); ?>">Data Analytics</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/it-solutions')); ?>">IT Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="<?php echo esc_url(home_url('/blog')); ?>">Blog</a></li>
-                </ul>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'primary',
+                    'menu_class' => 'nav-menu',
+                    'container' => false,
+                    'fallback_cb' => 'nopula_saas_fallback_menu',
+                ));
+                ?>
             </nav>
             
             <div class="header-actions">
