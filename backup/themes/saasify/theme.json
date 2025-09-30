@@ -1,0 +1,174 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "customTemplates": [
+    {
+      "title": "Blank",
+      "name": "blank",
+      "postTypes": [
+        "page",
+        "post"
+      ]
+    },
+    {
+      "title": "Full Width",
+      "name": "full-width",
+      "postTypes": [
+        "page",
+        "post"
+      ]
+    }
+  ],
+  "templateParts": [
+    {
+      "area": "header",
+      "name": "header",
+      "title": "Header"
+    },
+    {
+      "area": "footer",
+      "name": "footer",
+      "title": "Footer"
+    }
+  ],
+  "settings": {
+    "custom": {
+      "border": {
+        "width": "1px",
+        "style": "solid",
+        "color": "var(--wp--preset--color--neutral-100)",
+        "radius": "8px"
+      },
+      "boxShadow": {
+        "inset": "",
+        "x": "0",
+        "y": "4px",
+        "blur": "12px",
+        "spread": "0",
+        "color": "rgba(160,180,200,0.2)",
+        "hover": {
+          "inset": "",
+          "y": "6px"
+        }
+      },
+      "fontWeight": {
+        "black": 900,
+        "extraBold": 800,
+        "bold": 700,
+        "semiBold": 600,
+        "medium": 500,
+        "regular": 400,
+        "light": 300,
+        "extraLight": 200,
+        "thin": 100
+      },
+      "darkMode": {
+        "ghost": {
+          "color": "var(--wp--preset--color--neutral-900)"
+        }
+      },
+      "buttonOutline": {
+        "color": "var(--wp--preset--color--neutral-800)"
+      },
+      "strong": {
+        "fontWeight": "600"
+      },
+      "siteBlocks": {
+        "overflowX": "visible"
+      },
+      "ghost": {
+        "color": "var(--wp--preset--color--neutral-800)"
+      },
+      "checklist": {
+        "background": "var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple)"
+      }
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Inter, var(--wp--preset--font-family--sans-serif)",
+          "name": "Inter",
+          "slug": "inter",
+          "fontFace": [
+            {
+              "fontFamily": "Inter",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "fontWeight": "100 900",
+              "src": [
+                "file:./assets/fonts/inter.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "Inter Tight, var(--wp--preset--font-family--sans-serif)",
+          "name": "Inter Tight",
+          "slug": "inter-tight",
+          "fontFace": [
+            {
+              "fontFamily": "Inter Tight",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "fontWeight": "100 900",
+              "src": [
+                "file:./assets/fonts/inter-tight.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "JetBrains Mono, var(--wp--preset--font-family--monospace)",
+          "name": "JetBrains Mono",
+          "slug": "jetbrains-mono",
+          "fontFace": [
+            {
+              "fontFamily": "JetBrains Mono",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "fontWeight": "100 900",
+              "src": [
+                "file:./assets/fonts/jetbrains-mono.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "Flow Block, var(--wp--preset--font-family--sans-serif)",
+          "name": "Flow Block",
+          "slug": "flow-block",
+          "fontFace": [
+            {
+              "fontFamily": "Flow Block",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "fontWeight": "100 900",
+              "src": [
+                "file:./assets/fonts/flow-block.woff2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--neutral-900)",
+          "text": "var(--wp--preset--color--neutral-100)"
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontWeight": "var(--wp--custom--font-weight--bold)"
+        }
+      }
+    }
+  }
+}

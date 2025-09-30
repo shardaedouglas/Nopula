@@ -18,17 +18,13 @@
  * @package WordPress
  */
 
-/**
- * Database connection information is automatically provided.
- * There is no need to set or change the following database configuration
- * values:
- *   DB_HOST
- *   DB_NAME
- *   DB_USER
- *   DB_PASSWORD
- *   DB_CHARSET
- *   DB_COLLATE
- */
+// Database configuration for local development
+define('DB_HOST', 'db:3306');
+define('DB_NAME', 'nopula');
+define('DB_USER', 'wordpress');
+define('DB_PASSWORD', 'wordpress');
+define('DB_CHARSET', 'utf8mb4');
+define('DB_COLLATE', '');
 
 /**
  * Authentication Unique Keys and Salts.

@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:6.8.2-php8.3-apache
+    container_name: nopula-wordpress
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: nopula
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://localhost:8080');
+        define('WP_SITEURL', 'http://localhost:8080');
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', true);
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+      - ./wp-config.php:/var/www/html/wp-config.php
+      - ./sql:/var/www/html/sql
+    depends_on:
+      - db
+    networks:
+      - nopula-network
+
+  db:
+    image: mysql:8.0
+    container_name: nopula-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: nopula
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    networks:
+      - nopula-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: nopula-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: wordpress
+      PMA_PASSWORD: wordpress
+    depends_on:
+      - db
+    networks:
+      - nopula-network
+
+volumes:
+  mysql_data:
+
+networks:
+  nopula-network:
+    driver: bridge
