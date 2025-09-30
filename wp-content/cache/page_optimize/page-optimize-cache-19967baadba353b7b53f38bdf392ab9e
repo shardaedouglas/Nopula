@@ -1,0 +1,82 @@
+/* global WPGroHo:true, Gravatar */
+( function () {
+	var extend = function ( out ) {
+		out = out || {};
+
+		for ( var i = 1; i < arguments.length; i++ ) {
+			if ( ! arguments[ i ] ) {
+				continue;
+			}
+
+			for ( var key in arguments[ i ] ) {
+				if ( Object.hasOwn( arguments[ i ], key ) ) {
+					out[ key ] = arguments[ i ][ key ];
+				}
+			}
+		}
+
+		return out;
+	};
+
+	WPGroHo = extend(
+		{
+			my_hash: '',
+			data: {},
+			renderers: {},
+			syncProfileData: function ( hash, id ) {
+				var hashElements;
+
+				if ( ! WPGroHo.data[ hash ] ) {
+					WPGroHo.data[ hash ] = {};
+					hashElements = document.querySelectorAll( 'div.grofile-hash-map-' + hash + ' span' );
+					for ( var i = 0; i < hashElements.length; i++ ) {
+						WPGroHo.data[ hash ][ hashElements[ i ].className ] = hashElements[ i ].innerText;
+					}
+				}
+
+				WPGroHo.appendProfileData( WPGroHo.data[ hash ], hash, id );
+			},
+			appendProfileData: function ( data, hash, id ) {
+				for ( var key in data ) {
+					if ( 'function' === typeof WPGroHo.renderers[ key ] ) {
+						return WPGroHo.renderers[ key ]( data[ key ], hash, id, key );
+					}
+
+					var card = document.getElementById( id );
+					if ( card ) {
+						var heading = card.querySelector( 'h4' );
+						if ( heading ) {
+							var extra = document.createElement( 'p' );
+							extra.className = 'grav-extra ' + key;
+							extra.innerHTML = data[ key ];
+
+							heading.insertAdjacentElement( 'afterend', extra );
+						}
+					}
+				}
+			},
+		},
+		WPGroHo || {}
+	);
+
+	var jetpackHovercardsInit = function () {
+		if ( 'undefined' === typeof Gravatar ) {
+			return;
+		}
+
+		Gravatar.profile_cb = function ( h, d ) {
+			WPGroHo.syncProfileData( h, d );
+		};
+
+		Gravatar.my_hash = WPGroHo.my_hash;
+		Gravatar.init( 'body', '#wpadminbar' );
+	};
+
+	if ( document.readyState === 'interactive' || document.readyState === 'complete' ) {
+		jetpackHovercardsInit();
+	} else {
+		document.addEventListener( 'DOMContentLoaded', jetpackHovercardsInit );
+	}
+} )();
+;
+!function(e){var t;function n(t){var n=document.getElementById("wp-admin-bar-jetpack-scan-notice");if(n)if(t){var a=1===t?e.singular:e.multiple;n.innerHTML='<a href="'+e.scan_dashboard_url+'" class="ab-item">'+a+"</a>"}else n.parentNode.removeChild(n)}t=function(){var t;(t=new XMLHttpRequest).open("GET",e.scan_endpoint,!0),t.onload=function(){if(200===this.status){var e=JSON.parse(this.response);if(e&&e.data){var t=JSON.parse(e.data);n(t.threats&&t.threats.length?t.threats.length:0)}else n(0)}else n(0)},t.setRequestHeader("X-WP-Nonce",e.nonce),t.send()},"loading"!==document.readyState?t():document.addEventListener("DOMContentLoaded",t)}(window.Jetpack_Scan);;

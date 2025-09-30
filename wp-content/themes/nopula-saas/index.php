@@ -7,9 +7,23 @@
 
 get_header(); ?>
 
+<!-- Dot Navigator -->
+<nav class="dot-navigator" id="dot-navigator">
+    <ul class="dot-nav-list">
+        <li><a href="#hero" class="dot-nav-item active" data-section="hero" title="Home"><span class="dot"></span></a></li>
+        <li><a href="#services" class="dot-nav-item" data-section="services" title="Services"><span class="dot"></span></a></li>
+        <li><a href="#stats" class="dot-nav-item" data-section="stats" title="Stats"><span class="dot"></span></a></li>
+        <li><a href="#case-studies" class="dot-nav-item" data-section="case-studies" title="Case Studies"><span class="dot"></span></a></li>
+        <li><a href="#development-process" class="dot-nav-item" data-section="development-process" title="Our Process"><span class="dot"></span></a></li>
+        <li><a href="#technologies" class="dot-nav-item" data-section="technologies" title="Technologies"><span class="dot"></span></a></li>
+        <li><a href="#testimonials" class="dot-nav-item" data-section="testimonials" title="Testimonials"><span class="dot"></span></a></li>
+        <li><a href="#contact" class="dot-nav-item" data-section="contact" title="Contact"><span class="dot"></span></a></li>
+    </ul>
+</nav>
+
 <main id="main" class="site-main">
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="container">
             <h1 class="fade-in-up">Custom Software Solutions for Every Business</h1>
             <p class="fade-in-up">From startups to enterprise corporations, we build tailored software solutions that drive your business forward.</p>
@@ -348,128 +362,6 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-posts">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2>Nopula Tech Blog</h2>
-                <p>Insights, trends, and expertise in software development, technology, and business innovation.</p>
-            </div>
-
-            <!-- Blog Categories -->
-            <div class="blog-categories">
-                <div class="category-filters">
-                    <button class="category-btn active" data-category="all">All</button>
-                    <button class="category-btn" data-category="software-development">Software Development</button>
-                    <button class="category-btn" data-category="technology">Technology</button>
-                    <button class="category-btn" data-category="business">Business</button>
-                    <button class="category-btn" data-category="ai-ml">AI & ML</button>
-                    <button class="category-btn" data-category="case-studies">Case Studies</button>
-                </div>
-            </div>
-
-            <div class="blog-grid">
-                
-                <!-- Featured Post -->
-                <article class="blog-post featured-post fade-in-up" data-category="ai-ml">
-                    <div class="post-image">
-                        <div class="post-category">AI & ML</div>
-                    </div>
-                    <div class="post-content">
-                        <h3>The Future of AI in Enterprise Software Development</h3>
-                        <p>Explore how artificial intelligence is revolutionizing enterprise software development, from automated code generation to intelligent testing and deployment strategies.</p>
-                        <div class="post-meta">
-                            <span class="post-date">Dec 15, 2024</span>
-                            <span class="read-time">8 min read</span>
-                        </div>
-                        <a href="#" class="read-more">Read Full Article</a>
-                    </div>
-                </article>
-
-                <!-- Regular Posts -->
-                <article class="blog-post fade-in-up" data-category="software-development">
-                    <div class="post-image">
-                        <div class="post-category">Software Development</div>
-                    </div>
-                    <div class="post-content">
-                        <h3>Building Scalable Microservices Architecture</h3>
-                        <p>Learn the essential principles and best practices for designing and implementing microservices that can scale with your business growth.</p>
-                        <div class="post-meta">
-                            <span class="post-date">Dec 12, 2024</span>
-                            <span class="read-time">6 min read</span>
-                        </div>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-
-                <article class="blog-post fade-in-up" data-category="technology">
-                    <div class="post-image">
-                        <div class="post-category">Technology</div>
-                    </div>
-                    <div class="post-content">
-                        <h3>Cloud-Native Development: Best Practices for 2024</h3>
-                        <p>Discover the latest trends and strategies in cloud-native development, including containerization and serverless architecture.</p>
-                        <div class="post-meta">
-                            <span class="post-date">Dec 10, 2024</span>
-                            <span class="read-time">7 min read</span>
-                        </div>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-
-                <article class="blog-post fade-in-up" data-category="business">
-                    <div class="post-image">
-                        <div class="post-category">Business</div>
-                    </div>
-                    <div class="post-content">
-                        <h3>Digital Transformation Strategies for Mid-Market Companies</h3>
-                        <p>How mid-market companies can successfully navigate digital transformation initiatives and measure ROI.</p>
-                        <div class="post-meta">
-                            <span class="post-date">Dec 8, 2024</span>
-                            <span class="read-time">5 min read</span>
-                        </div>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-
-                <article class="blog-post fade-in-up" data-category="case-studies">
-                    <div class="post-image">
-                        <div class="post-category">Case Studies</div>
-                    </div>
-                    <div class="post-content">
-                        <h3>How We Built a Real-Time Trading Platform</h3>
-                        <p>An in-depth look at the technical challenges and solutions involved in developing a high-performance trading platform.</p>
-                        <div class="post-meta">
-                            <span class="post-date">Dec 5, 2024</span>
-                            <span class="read-time">10 min read</span>
-                        </div>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-
-                <article class="blog-post fade-in-up" data-category="ai-ml">
-                    <div class="post-image">
-                        <div class="post-category">AI & ML</div>
-                    </div>
-                    <div class="post-content">
-                        <h3>Machine Learning in Healthcare: Ethical Considerations</h3>
-                        <p>Exploring the ethical implications of implementing machine learning solutions in healthcare and regulatory compliance.</p>
-                        <div class="post-meta">
-                            <span class="post-date">Dec 3, 2024</span>
-                            <span class="read-time">9 min read</span>
-                        </div>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-
-            </div>
-
-            <!-- Load More Button -->
-            <div class="text-center" style="margin-top: var(--spacing-4xl);">
-                <button class="btn btn-primary btn-lg">Load More Articles</button>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     <section id="contact" class="cta">
