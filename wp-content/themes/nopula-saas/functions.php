@@ -138,7 +138,7 @@ function nopula_saas_customize_register($wp_customize) {
     
     // Hero Title
     $wp_customize->add_setting('hero_title', array(
-        'default'           => 'Custom Software Development for Every Business',
+        'default'           => 'Custom Software Solutions for Every Business',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     

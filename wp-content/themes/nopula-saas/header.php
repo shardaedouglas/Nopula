@@ -29,21 +29,7 @@
             <nav class="main-navigation">
                 <ul class="nav-menu">
                     <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#services" class="dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#services">All Services</a></li>
-                            <li><a href="#web-development">Web Development</a></li>
-                            <li><a href="#enterprise-software">Enterprise Software</a></li>
-                            <li><a href="#ecommerce-solutions">E-commerce Solutions</a></li>
-                            <li><a href="#ai-machine-learning">AI & Machine Learning</a></li>
-                            <li><a href="#cloud-applications">Cloud Applications</a></li>
-                            <li><a href="#mobile-development">Mobile Development</a></li>
-                            <li><a href="#system-integration">System Integration</a></li>
-                            <li><a href="#data-analytics">Data Analytics</a></li>
-                            <li><a href="#it-solutions">IT Solutions</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>

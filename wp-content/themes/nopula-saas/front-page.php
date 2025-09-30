@@ -11,7 +11,7 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="fade-in-up">Custom Software Development for Every Business</h1>
+            <h1 class="fade-in-up">Custom Software Solutions for Every Business</h1>
             <p class="fade-in-up">From startups to enterprise corporations, we build tailored software solutions that drive your business forward.</p>
             <div class="fade-in-up">
                 <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>

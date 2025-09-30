@@ -1,11 +1,11 @@
-# Nopula Custom Software Development Theme
+# Nopula Custom Software Solutions Theme
 
-A custom WordPress theme built from scratch for Nopula - Custom software development for businesses of all sizes.
+A custom WordPress theme built from scratch for Nopula - Custom software solutions for businesses of all sizes.
 
 ## Features
 
 ### 🎨 Modern Design
-- Clean, professional custom software development design
+- Clean, professional custom software solutions design
 - Responsive layout that works on all devices
 - Modern color scheme with CSS custom properties
 - Smooth animations and transitions
